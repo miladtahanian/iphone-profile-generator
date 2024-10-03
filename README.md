@@ -1,12 +1,13 @@
 ## ساخت پروفایل برای وصل انتن ایفون بدون رجیستر و ساخت uuid یکتا برای هر پروفایل جدید 🦹‍♀️
 
 
-Configuration Profile Generator
+کانفیگ بازگشت آنتن آیفون های سری 14 و 15 و 16
 ====================================
 
-This is a simple web-based application that allows you to generate a configuration profile for your mobile device. The configuration profile is in the form of a .mobileconfig file, which can be used to configure various settings on your device, such as APN, proxy, and DNS.
+##روش جدید اضافه شد
+[لینک](https://miladtahanian.github.io/iphone-profile-generator/)
  
-Usage
+روش استفاده
 -----
 
 
