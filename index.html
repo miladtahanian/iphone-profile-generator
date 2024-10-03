@@ -1,19 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Configuration Profile Generator with Unique Uuid</title>
-  <!-- Add Bootstrap CSS CDN -->
+  <title>پروفایل بازگشت آنتن آیفون 14 و 15 و 16</title>
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Add custom CSS styles -->
+  
   <style>
-    /* Your CSS here */
     body {
         font-family: 'Roboto', sans-serif;
-        background: linear-gradient(to right, #b72126, #212121);
+        background: linear-gradient(to right, #333, #555);
         color: #fff;
-        direction: rtl;
     }
     .container {
         max-width: 800px;
@@ -22,9 +20,6 @@
         background-color: rgba(0, 0, 0, 0.6);
         border-radius: 10px;
         box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
-    }
-    a {
-        margin: 10px;
     }
     h1 {
         text-align: center;
@@ -56,7 +51,6 @@
     .form-text {
         color: #888;
         margin-top: 5px;
-        text-align: center;
     }
     .carrier {
         color: #f00;
@@ -64,9 +58,6 @@
     .apn {
         color: #f90;
     }
-    /* .vpn {
-        color: #09f;
-    } */
     .proxy {
         color: #0f0;
     }
@@ -98,14 +89,13 @@
         font-weight: 500;
         margin-top: 20px;
         display: block;
-        width: 100%;
+        width: 50%;
         margin-left: auto;
         margin-right: auto;
     }
     button:hover {
         background-color: #f30;
     }
-    /* Add responsive styles for mobile devices */
     @media only screen and (max-width: 600px) {
         .container {
             padding: 20px;
@@ -126,26 +116,26 @@
         }
     }
   </style>
-  <!-- Add custom fonts from Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <h1>پروفایل آنتن آیفون</h1>
-    <!-- Add form for configuration generator -->
+  <div class="container" style="text-align: center; padding: 20px;">
+    <h1 style="font-size: 24px; color: #FF0000;">پروفایل بازگشت آنتن آیفون 14 و 15 و 16</h1>
     <form id="config-form">
       <!-- APN -->
       <div class="mb-3">
-        <label for="apn" class="form-label apn">اپراتور خود را انتخاب  کنید:</label>
+        <label for="apn" class="form-label apn">نوع اپراتور خود را انتخاب کنید:</label>
         <select id="apn" class="form-select">
           <option value="mcinet">همراه اول</option>
           <option value="mtnirancell">ایرانسل</option>
           <option value="RighTel">رایتل</option>
-          <option value="Aptel">آپتل</option>
+          <option value="ApTel">آپتل</option>
+          <option value="samantel">سامانتل</option>
+<option value="shatelmobile">شاتل</option>
         </select>
-        <div class="form-text"></div>
+        <div class="form-text">اپراتور خود را انتخاب کنید</div>
       </div>
 
       <button type="submit" class="btn btn-primary">ساخت پروفایل</button>
@@ -153,61 +143,25 @@
 
     <!-- Message box -->
     <div class="alert mt-3" role="alert">
-      <h4 class="alert-heading carrier">افزایش قدرت سیگنال:</h4>
-      <p>تقویت کننده سیگنال، که با نام تکرار کننده نیز شناخته می‌شود، دستگاهی است که سیگنال بی‌سیم را تقویت می‌کند. از این وسیله می‌توان برای بهبود قدرت و پوشش سیگنال در مناطقی که سیگنال ضعیف است یا دچار انسداد شده، استفاده کرد.</p>
-      <h4 class="alert-heading apn">نام نقاط دسترسی APN:</h4>
-      <p>نام نقطه‌ی دسترسی (APN) دروازه‌ای بین شبکه‌ی تلفن همراه (سلولار) و اینترنت عمومی است. برای راه‌اندازی اتصال داده روی یک دستگاه‌ موبایل از APN استفاده می‌شود و اپراتورهای مختلف ممکن است تنظیمات APN متفاوتی داشته باشند.</p>
-      <h4 class="alert-heading proxy">پروکسی سرور:</h4>
-      <p>یک سرور پروکسی واسطه‌ای بین یک کاربر (کلاینت) و یک سرور است. از این سرور می‌توان برای ناشناس بودن، فیلتر کردن محتوا یا ذخیره‌سازی موقت داده‌ها جهت بهبود عملکرد استفاده کرد.</p>
-      <h4 class="alert-heading dns">DNS:</h4>
-      <p>سامانه نام دامنه (DNS) سیستمی است که نام‌های دامنه را به آدرس‌های IP ترجمه می‌کند. از این سامانه می‌توان برای مسدود کردن یا تغییر مسیر دسترسی به وب‌سایت‌های خاص، یا برای بهبود عملکرد یک شبکه استفاده کرد.</p>
-
-      <h2>قبل از آپلود پروفایل‌ها این کارها را انجام دهید:</h2>
-      <p>ابتدا ریست نتورک را انجام دهید 🔄.</p>
-      <p>روی فایل کانفیگ دانلود شده کلیک کنید تا باز شود، سپس آن را در فایل ذخیره کنید💾.
-    </p>
-    <p>      سپس به فایل منیجر بروید و روی کانفیگ کلیک کنید تا یک پیام بالا بیاید و اماده نصب شود 📂.
-    </p>
-    <p>
-        سپس وارد تنظیمات بخش VPN و Device Management شوید، پروفایل را انتخاب کرده و نصب کنید 📲.
-    </p>
-    <p>
-        بعد از نصب، به بخش Cellular Data بروید، تیک Data Roaming و VoLTE را بر روی 5G یا LTE بزنید، سپس گوشی را روشن و خاموش کنید تا آنتن برگردد 📶.
-    </p>
-    <p>
-        حالا بر روی <a href="https://www.icloud.com/shortcuts/9b2f6b908fb74058b2b1bf3ed4d08451">لینک شورتکات</a> کلیک کنید 
-    </p>
-    <p> از توی شورتکات روی Anten کلیک کرده و نصبش کنید 📱.
-    </p>
-    <p>
-        و اگه انتن قطع شد با فعال کردن Shortcut میتونید مجدد راه اندازی کنید 🔄.
-    </p>
-    <p>تمام شما آنتن دارید 📶.</p>
-    <h2>چند نکته مهم:    </h2>
-    <p>روی شبکه همراه اول تنظیم کنید تا آنتن بهتر بازگردد 📡.    </p>
-    <p>از دو سیم کارت همزمان در گوشی استفاده نکنید 🚫.
-    </p>
-    <p>حتماً نت را روی 5G تنظیم کنید 📶</p>
-    <p>اگر از ساعت ۱۲ شب آنتن ندارید، نت را روی 2G تنظیم کنید، زیرا در برخی موارد آنتن به طور اتوماتیک تا صبح ۸ برگردد 🌙.</p>
-    <p>همچنین به یاد داشته باشید که هر پروفایل جدیدی که می‌خواهید تست کنید، قبل از آن باید پروفایل قبلی را پاک کنید ❌.    </p>
-    <h3>توجه</h3>
-    <p>این راهنما برای تنظیم تلفن همراه برای دسترسی به اینترنت از طریق اتصال 4G مناسب است. به یاد داشته باشید که اطلاعات APN و دیگر تنظیمات ممکن است برای هر شبکه مختلف یا دستگاه متفاوت تغییر کند
-
-    </p>
-<p>آدرس گیت هاب : <a href="https://github.com/miladtahanian">https://github.com/miladtahanian</a></p>
-<p>آدرس اینستاگرام : <a href="https://www.instagram.com/tahanianmilad">https://www.instagram.com/tahanianmilad</a></p>
-
-<p>آدرس تلگرام : <a href="https://t.me/miladtahanian" >https://t.me/miladtahanian</a></p>
- </p>
-
+        <h3>نسخه به روز شده بازگشت آنتن آیفون</h3>
+        <br/>
+        <h4 class="alert-heading carrier">افزایش قدرت سیگنال:</h4>
+        <p>تقویت کننده سیگنال، که با نام تکرار کننده نیز شناخته می‌شود، دستگاهی است که سیگنال بی‌سیم را تقویت می‌کند. از این وسیله می‌توان برای بهبود قدرت و پوشش سیگنال در مناطقی که سیگنال ضعیف است یا دچار انسداد شده، استفاده کرد.</p>
+        <h4 class="alert-heading apn">نام نقاط دسترسی APN:</h4>
+        <p>نام نقطه‌ی دسترسی (APN) دروازه‌ای بین شبکه‌ی تلفن همراه (سلولار) و اینترنت عمومی است. برای راه‌اندازی اتصال داده روی یک دستگاه‌ موبایل از APN استفاده می‌شود و اپراتورهای مختلف ممکن است تنظیمات APN متفاوتی داشته باشند.</p>
+        <h4 class="alert-heading proxy">پروکسی سرور:</h4>
+        <p>یک سرور پروکسی واسطه‌ای بین یک کاربر (کلاینت) و یک سرور است. از این سرور می‌توان برای ناشناس بودن، فیلتر کردن محتوا یا ذخیره‌سازی موقت داده‌ها جهت بهبود عملکرد استفاده کرد.</p>
+        <h4 class="alert-heading dns">DNS:</h4>
+        <p>سامانه نام دامنه (DNS) سیستمی است که نام‌های دامنه را به آدرس‌های IP ترجمه می‌کند. از این سامانه می‌توان برای مسدود کردن یا تغییر مسیر دسترسی به وب‌سایت‌های خاص، یا برای بهبود عملکرد یک شبکه استفاده کرد.</p>
+  
+      <p> 💞️ طراحی و توسعه پروژه:</p>
+      <a href="https://github.com/miladtahanian">میلاد طحانیان</a>
     </div>
   </div>
 
-  <!-- Add Bootstrap JS CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 
-  <!-- Add custom JavaScript -->
   <script>
     const configForm = document.getElementById('config-form');
 
@@ -221,19 +175,18 @@
     function handleFormSubmit(event) {
       event.preventDefault();
 
-      // Collect form data
       const apn = document.getElementById('apn').value;
 
-      // Create the XML-formatted plist string
       const configPlist = `<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
     <key>PayloadContent</key>
     <array>
+        <!-- Cellular Settings -->
         <dict>
             <key>PayloadDisplayName</key>
-            <string>iPhoneCellularByMT</string>
+            <string>Cellular</string>
             <key>PayloadIdentifier</key>
             <string>com.apple.cellular</string>
             <key>PayloadType</key>
@@ -244,60 +197,159 @@
             <integer>1</integer>
             <key>APNs</key>
             <array>
+                <!-- First APN -->
                 <dict>
+                    <key>AllowedProtocolMask</key>
+                    <integer>3</integer>
+                    <key>AllowedProtocolMaskInDomesticRoaming</key>
+                    <integer>3</integer>
+                    <key>AllowedProtocolMaskInRoaming</key>
+                    <integer>3</integer>
                     <key>AuthenticationType</key>
-                    <string>CHAP</string>
-                    <key>Enabled</key>
-                    <true/>
+                    <string>PAP</string>
+                    <key>DefaultProtocolMask</key>
+                    <integer>3</integer>
+                    <key>EnableXLAT464</key>
+                    <true />
                     <key>Name</key>
                     <string>${apn}</string>
+                    <key>ProxyServer</key>
+                    <string></string>
+                    <key>Username</key>
+                    <string></string>
+                </dict>
+                <!-- Second APN -->
+                <dict>
+                    <key>AllowedProtocolMask</key>
+                    <integer>1</integer>
+                    <key>AllowedProtocolMaskInDomesticRoaming</key>
+                    <integer>1</integer>
+                    <key>AllowedProtocolMaskInRoaming</key>
+                    <integer>1</integer>
+                    <key>AuthenticationType</key>
+                    <string>CHAP</string>
+                    <key>DefaultProtocolMask</key>
+                    <integer>1</integer>
+                    <key>EnableXLAT464</key>
+                    <true />
+                    <key>Name</key>
+                    <string>${apn}</string>
+                    <key>Username</key>
+                    <string></string>
                 </dict>
             </array>
+            <key>AttachAPN</key>
+            <dict>
+                <key>AllowedProtocolMask</key>
+                <integer>3</integer>
+                <key>AuthenticationType</key>
+                <string>PAP</string>
+                <key>Name</key>
+                <string>${apn}</string>
+                <key>Username</key>
+                <string></string>
+            </dict>
+        </dict>
+
+        <!-- VPN Settings -->
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>VPN</string>
+            <key>PayloadIdentifier</key>
+            <string>com.apple.vpn.managed.${generateUniqueUUID()}</string>
+            <key>PayloadType</key>
+            <string>com.apple.vpn.managed</string>
+            <key>PayloadUUID</key>
+            <string>${generateUniqueUUID()}</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>UserDefinedName</key>
+            <string>VPN Configuration</string>
+            <key>VPNType</key>
+            <string>IPSec</string>
+            <key>IPSec</key>
+            <dict>
+                <key>AuthenticationMethod</key>
+                <string>SharedSecret</string>
+                <key>ExtendedAuthEnabled</key>
+                <false/>
+                <key>LocalIdentifier</key>
+                <string>${apn}</string>
+                <key>RemoteAddress</key>
+                <string>vpn.example.com</string>
+                <key>SharedSecret</key>
+                <string>${generateUniqueUUID()}</string>
+                <key>XAuthEnabled</key>
+                <false/>
+                <key>XAuthName</key>
+                <string>${apn}</string>
+                <key>XAuthPassword</key>
+                <string>${apn}</string>
+            </dict>
+        </dict>
+
+        <!-- Proxy Settings -->
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>Proxy</string>
+            <key>PayloadIdentifier</key>
+            <string>com.apple.proxy.${generateUniqueUUID()}</string>
+            <key>PayloadType</key>
+            <string>com.apple.proxy</string>
+            <key>PayloadUUID</key>
+            <string>${generateUniqueUUID()}</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>HTTPEnable</key>
+            <false/>
+            <key>HTTPPort</key>
+            <integer>8080</integer>
+            <key>HTTPSEnable</key>
+            <false/>
+            <key>HTTPSPort</key>
+            <integer>8080</integer>
+            <key>FTPEnable</key>
+            <false/>
+            <key>FTPPort</key>
+            <integer>21</integer>
+            <key>SOCKSEnable</key>
+            <false/>
+            <key>SOCKSPort</key>
+            <integer>1080</integer>
+            <key>Server</key>
+            <string></string>
+            <key>ExclusionList</key>
+            <array>
+                <string>localhost</string>
+                <string>127.0.0.1</string>
+                <string>169.254.0.0/16</string>
+            </array>
+        </dict>
+
+        <!-- Additional Settings -->
+        <dict>
+            <key>PayloadDisplayName</key>
+            <string>Additional Settings</string>
+            <key>PayloadIdentifier</key>
+            <string>com.example.additionalsettings.${generateUniqueUUID()}</string>
+            <key>PayloadType</key>
+            <string>Configuration</string>
+            <key>PayloadUUID</key>
+            <string>${generateUniqueUUID()}</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadOrganization</key>
+            <string>Github:miladtahanian</string>
+            <key>PayloadRemovalDisallowed</key>
+            <false/>
             <key>SignalBoostEnabled</key>
             <true/>
-            <key>Proxy</key>
-            <dict>
-                <key>Enabled</key>
-                <true/>
-                <key>PayloadType</key>
-                <string>com.apple.proxy</string>
-                <key>PayloadUUID</key>
-                <string>${generateUniqueUUID()}</string>
-                <key>PayloadVersion</key>
-                <integer>1</integer>
-                <key>HTTPEnable</key>
-                <true/>
-                <key>HTTPPort</key>
-                <integer>8080</integer>
-                <key>HTTPSEnable</key>
-                <true/>
-                <key>HTTPSPort</key>
-                <integer>8080</integer>
-                <key>FTPEnable</key>
-                <true/>
-                <key>FTPPort</key>
-                <integer>21</integer>
-                <key>SOCKSEnable</key>
-                <true/>
-                <key>SOCKSPort</key>
-                <integer>1080</integer>
-                <key>Server</key>
-                <string>proxy.example.com</string>
-                <key>ExclusionList</key>
-                <array>
-                    <string>localhost</string>
-                    <string>127.0.0.1</string>
-                    <string>169.254.0.0/16</string>
-                </array>
-            </dict>
         </dict>
     </array>
     <key>PayloadDisplayName</key>
-    <string>Cellular and Network Settings</string>
+    <string>Configuration Profile</string>
     <key>PayloadIdentifier</key>
-    <string>com.example.cellular</string>
-    <key>PayloadOrganization</key>
-    <string>Github:miladtahanian</string>
+    <string>com.example.profile</string>
     <key>PayloadRemovalDisallowed</key>
     <false/>
     <key>PayloadType</key>
@@ -310,22 +362,17 @@
 </plist>
 `;
 
-      // Create a Blob object from the configuration plist string
       const configBlob = new Blob([configPlist], { type: 'application/xml' });
-
-      // Create a download link and click it to download the file
       const downloadLink = document.createElement('a');
       downloadLink.href = URL.createObjectURL(configBlob);
       downloadLink.download = 'config.mobileconfig';
       downloadLink.click();
-
-      // Wait for the download to complete before revoking the object URL
       setTimeout(() => {
-        URL.revokeObjectURL(downloadLink.href);
+          URL.revokeObjectURL(downloadLink.href);
       }, 1000);
     }
 
     configForm.addEventListener('submit', handleFormSubmit);
   </script>
 </body>
-</html>
+</html> 
