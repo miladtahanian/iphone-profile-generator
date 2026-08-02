@@ -3,154 +3,272 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>پروفایل APN آیفون - تنظیمات اپراتور</title>
+  <title>مولد پروفایل پیکربندی شبکه iOS</title>
   
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  
+  <!-- Bootstrap 5.3 RTL CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <!-- Vazirmatn Font -->
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+
   <style>
+    :root {
+      --bg-start: #0f172a;
+      --bg-end: #1e293b;
+      --card-bg: rgba(30, 41, 59, 0.75);
+      --card-border: rgba(255, 255, 255, 0.12);
+      --accent-color: #2563eb;
+      --accent-hover: #1d4ed8;
+      --shortcut-accent: #059669;
+      --shortcut-hover: #047857;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
     body {
-        font-family: 'Roboto', sans-serif;
-        background: linear-gradient(to right, #333, #555);
-        color: #fff;
+      font-family: 'Vazirmatn', sans-serif;
+      background: radial-gradient(circle at top, var(--bg-end), var(--bg-start));
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 15px;
     }
-    .container {
-        max-width: 800px;
-        margin-top: 50px;
-        padding: 30px;
-        background-color: rgba(0, 0, 0, 0.6);
-        border-radius: 10px;
-        box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+
+    .main-card {
+      max-width: 800px;
+      width: 100%;
+      background: var(--card-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 35px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
     }
-    h1 {
-        text-align: center;
-        margin-bottom: 50px;
-        color: #fff;
-        font-weight: 300;
-        text-shadow: 2px 2px #000;
+
+    .header-title {
+      font-size: 26px;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 8px;
+      color: #ffffff;
     }
-    label {
-        font-weight: 500;
-        display: block;
-        margin-bottom: 5px;
-        position: relative;
+
+    .subtitle-link {
+      display: block;
+      text-align: center;
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 500;
+      margin-bottom: 30px;
+      transition: color 0.2s;
     }
-    label::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 2px;
-        background-color: #fff;
-        transform: scaleX(0);
-        transition: transform 0.3s ease-out;
+
+    .subtitle-link:hover {
+      color: #7dd3fc;
+      text-decoration: underline;
     }
-    label:hover::before, input:focus + label::before, select:focus + label::before, textarea:focus + label::before {
-        transform: scaleX(1);
+
+    .nav-tabs {
+      border-bottom: 1px solid var(--card-border);
+      margin-bottom: 25px;
     }
-    .form-text {
-        color: #888;
-        margin-top: 5px;
+
+    .nav-tabs .nav-link {
+      color: var(--text-muted);
+      border: none;
+      font-weight: 600;
+      padding: 12px 20px;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
     }
-    .carrier {
-        color: #f00;
+
+    .nav-tabs .nav-link:hover {
+      color: var(--text-main);
+      border-color: transparent;
     }
-    .apn {
-        color: #f90;
+
+    .nav-tabs .nav-link.active {
+      color: #38bdf8;
+      background-color: transparent;
+      border-bottom: 2px solid #38bdf8;
     }
-    input, select, textarea {
-        border-radius: 10px;
-        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-        padding: 10px;
-        font-size: 14px;
-        background-color: rgba(0, 0, 0, 0.3);
-        color: #fff;
-        border: none;
-        margin-bottom: 20px;
+
+    .form-label {
+      font-weight: 600;
+      color: #e2e8f0;
+      margin-bottom: 10px;
     }
-    button {
-        background-color: #f00;
-        color: #fff;
-        border-radius: 10px;
-        padding: 10px 20px;
-        border: none;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        font-size: 14px;
-        font-weight: 500;
-        margin-top: 20px;
-        display: block;
-        width: 50%;
-        margin-left: auto;
-        margin-right: auto;
+
+    .form-select {
+      background-color: rgba(15, 23, 42, 0.7);
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+      border-radius: 10px;
+      padding: 12px;
+      font-size: 15px;
     }
-    button:hover {
-        background-color: #f30;
+
+    .form-select:focus {
+      background-color: rgba(15, 23, 42, 0.9);
+      border-color: var(--accent-color);
+      color: var(--text-main);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
     }
-    @media only screen and (max-width: 600px) {
-        .container {
-            padding: 20px;
-        }
-        h1 {
-            font-size: 24px;
-        }
-        label {
-            font-size: 14px;
-        }
-        input,
-        select,
-        textarea {
-            font-size: 14px;
-        }
-        button {
-            font-size: 14px;
-        }
+
+    .btn-action {
+      background-color: var(--accent-color);
+      color: #ffffff;
+      border-radius: 10px;
+      padding: 14px;
+      border: none;
+      font-weight: 700;
+      width: 100%;
+      transition: all 0.2s ease;
+      margin-top: 10px;
+    }
+
+    .btn-action:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .instruction-card {
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 15px;
+    }
+
+    .instruction-card h6 {
+      color: #38bdf8;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .instruction-card p, .instruction-card ol {
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-bottom: 0;
+      padding-right: 20px;
+    }
+
+    .instruction-card li {
+      margin-bottom: 6px;
+    }
+
+    .badge-filename {
+      background-color: rgba(56, 189, 248, 0.1);
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-family: monospace;
+      font-size: 13px;
+    }
+
+    .footer-info {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid var(--card-border);
+      font-size: 13px;
+      color: var(--text-muted);
+      text-align: center;
     }
   </style>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container" style="text-align: center; padding: 20px;">
-    <h1 style="font-size: 24px; color: #FF0000;">پروفایل APN آیفون - تنظیمات اپراتور</h1>
-    <form id="config-form">
-      <!-- APN -->
-      <div class="mb-3">
-        <label for="apn" class="form-label apn">نوع اپراتور خود را انتخاب کنید:</label>
-        <select id="apn" class="form-select">
-          <option value="mcinet">Hamrah Aval (همراه اول)</option>
-          <option value="mtnirancell">Irancell (ایرانسل)</option>
-          <option value="RighTel">Rightel (رایتل)</option>
-          <option value="ApTel">Aptel (آپتل)</option>
-          <option value="samantel">Samantel (سامانتل)</option>
-          <option value="shatelmobile">Shatel Mobile (شاتل موبایل)</option>
-        </select>
-        <div class="form-text">اپراتور خود را انتخاب کنید</div>
+
+  <div class="main-card">
+    <h1 class="header-title">مولد پروفایل شبکه آیفون ۱۴ به بالا</h1>
+    <a href="https://telegram.me/miladtahanian" target="_blank" class="subtitle-link">پشتیبانی</a>
+
+    <!-- زبانه ها (Tabs) -->
+    <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-pane" type="button" role="tab">ساخت پروفایل (mobileconfig.)</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="shortcut-tab" data-bs-toggle="tab" data-bs-target="#shortcut-pane" type="button" role="tab">راهنمای Shortcut (میانبر)</button>
+      </li>
+    </ul>
+
+    <div class="tab-content" id="myTabContent">
+      <!-- تب اول: فرم ساخت پروفایل -->
+      <div class="tab-pane fade show active" id="profile-pane" role="tabpanel">
+        <form id="config-form">
+          <div class="mb-4">
+            <label for="apn" class="form-label">اپراتور شبکه را انتخاب کنید:</label>
+            <select id="apn" class="form-select">
+              <option value="mcinet">همراه اول (MCI)</option>
+              <option value="mtnirancell">ایرانسل (Irancell)</option>
+              <option value="RighTel">رایتل (RighTel)</option>
+              <option value="ApTel">آپتل (ApTel)</option>
+              <option value="samantel">سامانتل (Samantel)</option>
+              <option value="shatelmobile">شاتل موبایل (Shatel Mobile)</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-action">دانلود فایل پروفایل اختصاصی</button>
+        </form>
+
+        <!-- راهنمای سریع نصب -->
+        <div class="mt-4">
+          <div class="instruction-card">
+            <h6>دستورالعمل نصب در iOS:</h6>
+            <ol>
+              <li>پس از دانلود، به مسیر <strong>Settings</strong> دستگاه بروید.</li>
+              <li>گزینه <strong>Profile Downloaded</strong> را در بالای صفحه انتخاب کنید.</li>
+              <li>روی <strong>Install</strong> کلیک کرده و Passcode دستگاه را وارد نمایید.</li>
+              <li>یک‌بار حالت هواپیما (Airplane Mode) را فعال و غیرفعال کنید.</li>
+            </ol>
+          </div>
+        </div>
       </div>
 
-      <button type="submit" class="btn btn-primary">ساخت پروفایل</button>
-    </form>
+      <!-- تب دوم: راهنمای ساخت Shortcut -->
+      <div class="tab-pane fade" id="shortcut-pane" role="tabpanel">
+        <div class="instruction-card">
+          <h6>دستورالعمل ایجاد Shortcut سوئیچ سریع شبکه:</h6>
+          <p class="mb-3">برای بازنشانی سریع آنتن روی آیفون‌های نسل جدید بدون نیاز به ریستارت، می‌توانید یک Shortcut هوشمند بسازید:</p>
+          <ol>
+            <li>برنامه <strong>Shortcuts</strong> را در آیفون باز کنید.</li>
+            <li>روی علامت <strong>+</strong> در بالای صفحه کلیک کنید تا یک شورت‌کات جدید ایجاد شود.</li>
+            <li>از بخش افزودن اکشن‌ها (Add Action)، دستور <strong>Set Airplane Mode</strong> را جستجو و اضافه کنید (مقدار را روی Turn On بگذارید).</li>
+            <li>دستور <strong>Wait</strong> را اضافه کرده و زمان آن را روی <strong>۳ ثانیه</strong> قرار دهید.</li>
+            <li>مجدداً دستور <strong>Set Airplane Mode</strong> را اضافه کنید (مقدار را روی Turn Off بگذارید).</li>
+            <li>در نهایت دستور <strong>Set Cellular Data</strong> را اضافه کرده و روی Turn On تنظیم کنید.</li>
+            <li>نام شورت‌کات را به <code>Reset Network</code> تغییر داده و آن را به صفحه اصلی (Home Screen) یا ویجت‌ها اضافه کنید.</li>
+          </ol>
+        </div>
 
-    <!-- Message box -->
-    <div class="alert mt-3" role="alert">
-        <h3>پروفایل تنظیمات APN آیفون</h3>
-        <br/>
-        <h4 class="alert-heading carrier">نام نقاط دسترسی APN:</h4>
-        <p>نام نقطه‌ی دسترسی (APN) دروازه‌ای بین شبکه‌ی تلفن همراه (سلولار) و اینترنت عمومی است. برای راه‌اندازی اتصال داده روی یک دستگاه موبایل از APN استفاده می‌شود و اپراتورهای مختلف ممکن است تنظیمات APN متفاوتی داشته باشند.</p>
-        <h4 class="alert-heading apn">نحوه استفاده:</h4>
-        <p>اپراتور خود را انتخاب کنید و دکمه «ساخت پروفایل» را بزنید. فایل .mobileconfig دانلود شده را در آیفون باز کنید و تنظیمات را نصب کنید.</p>
-        
-        <p> طراحی و توسعه پروژه:</p>
-        <a href="https://github.com/miladtahanian">میلاد طحانیان</a>
+        <div class="instruction-card">
+          <h6>کاربرد Shortcut:</h6>
+          <p>در صورت افت سیگنال یا تغییر دکل شبکه در آیفون‌های ۱۴ به بالا، اجرای این شورت‌کات با یک کلیک ارتباط داده شما را بازنشانی می‌کند.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- پاورقی -->
+    <div class="footer-info">
+      <p class="mb-1">توسعه یافته برای افزایش سازگاری مودم‌های ۵G و پشتیبانی از XLAT464 روی iOS 16 و بالاتر</p>
+      <p class="mb-0">گیت‌هاب: miladtahanian@</p>
     </div>
   </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
-    const configForm = document.getElementById('config-form');
+    const apnSelect = document.getElementById('apn');
+    const filenamePreview = document.getElementById('filename-preview');
+
+    // بروزرسانی پیش‌نمایش نام فایل هنگام تغییر اپراتور
+    apnSelect.addEventListener('change', function() {
+      filenamePreview.textContent = `${this.value}.mobileconfig`;
+    });
 
     function generateUniqueUUID() {
       return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -162,9 +280,10 @@
     function handleFormSubmit(event) {
       event.preventDefault();
 
-      const apnSelect = document.getElementById('apn');
       const apn = apnSelect.value;
-      const carrierName = apnSelect.options[apnSelect.selectedIndex].text;
+      const fileName = `${apn}.mobileconfig`;
+      const payloadUUID = generateUniqueUUID();
+      const cellularUUID = generateUniqueUUID();
 
       const configPlist = `<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -173,58 +292,79 @@
     <key>PayloadContent</key>
     <array>
         <dict>
-            <key>PayloadDescription</key>
-            <string>Configures APN settings</string>
             <key>PayloadDisplayName</key>
-            <string>${carrierName} APN</string>
+            <string>Cellular Settings (${apn})</string>
             <key>PayloadIdentifier</key>
-            <string>com.example.${apn}.apn</string>
-            <key>PayloadOrganization</key>
-            <string>${carrierName}</string>
+            <string>com.apple.cellular.${cellularUUID}</string>
             <key>PayloadType</key>
             <string>com.apple.cellular</string>
             <key>PayloadUUID</key>
-            <string>${generateUniqueUUID()}</string>
+            <string>${cellularUUID}</string>
             <key>PayloadVersion</key>
             <integer>1</integer>
             <key>APNs</key>
             <array>
                 <dict>
+                    <key>AllowedProtocolMask</key>
+                    <integer>3</integer>
+                    <key>AllowedProtocolMaskInDomesticRoaming</key>
+                    <integer>3</integer>
+                    <key>AllowedProtocolMaskInRoaming</key>
+                    <integer>3</integer>
+                    <key>AuthenticationType</key>
+                    <string>PAP</string>
+                    <key>DefaultProtocolMask</key>
+                    <integer>3</integer>
+                    <key>EnableXLAT464</key>
+                    <true/>
                     <key>Name</key>
-                    <string>${carrierName}</string>
-                    <key>APN</key>
                     <string>${apn}</string>
                 </dict>
             </array>
+            <key>AttachAPN</key>
+            <dict>
+                <key>AllowedProtocolMask</key>
+                <integer>3</integer>
+                <key>AuthenticationType</key>
+                <string>PAP</string>
+                <key>Name</key>
+                <string>${apn}</string>
+            </dict>
         </dict>
     </array>
+    <key>PayloadDescription</key>
+    <string>تنظیمات شبکه اختصاصی APN برای اپراتور ${apn}</string>
     <key>PayloadDisplayName</key>
-    <string>${carrierName} APN Configuration</string>
+    <string>پروفایل پیکربندی شبکه ${apn}</string>
     <key>PayloadIdentifier</key>
-    <string>com.example.${apn}</string>
+    <string>com.miladtahanian.mobileconfig.${apn}.${payloadUUID}</string>
+    <key>PayloadOrganization</key>
+    <string>miladtahanian</string>
     <key>PayloadRemovalDisallowed</key>
     <false/>
     <key>PayloadType</key>
     <string>Configuration</string>
     <key>PayloadUUID</key>
-    <string>${generateUniqueUUID()}</string>
+    <string>${payloadUUID}</string>
     <key>PayloadVersion</key>
     <integer>1</integer>
 </dict>
-</plist>
-`;
+</plist>`;
 
-      const configBlob = new Blob([configPlist], { type: 'application/xml' });
+      const configBlob = new Blob([configPlist], { type: 'application/x-apple-asn1-encoded' });
       const downloadLink = document.createElement('a');
       downloadLink.href = URL.createObjectURL(configBlob);
-      downloadLink.download = `${carrierName.replace(/\s+/g, '_')}_APN.mobileconfig`;
+      downloadLink.download = fileName;
+      document.body.appendChild(downloadLink);
       downloadLink.click();
+      document.body.removeChild(downloadLink);
+
       setTimeout(() => {
-          URL.revokeObjectURL(downloadLink.href);
+        URL.revokeObjectURL(downloadLink.href);
       }, 1000);
     }
 
-    configForm.addEventListener('submit', handleFormSubmit);
+    document.getElementById('config-form').addEventListener('submit', handleFormSubmit);
   </script>
 </body>
-</html> 
+</html>
