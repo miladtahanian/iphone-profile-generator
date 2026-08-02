@@ -57,5 +57,4 @@
 
 ## توسعه‌دهنده و پشتیبانی
 
-- شناسه در شبکه‌های اجتماعی: AiGptCode@
-- آدرس کیف پول حمایت مالی (Bitcoin): bc1q3230gkphdk5qzsxtj079mz5w35svwrpwq6wh8c
+- شناسه در شبکه‌های اجتماعی: miladtahanian@
